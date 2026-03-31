@@ -8,23 +8,34 @@
 
 #### Вопросы
 1. Выберите один UDP-пакет. По этому пакету определите, сколько полей содержит UDP-заголовок.
-   - <!-- todo -->
+   - 4 поля: `Source Port`, `Destination Port`, `Length` и `Checksum`.  
+   ![](images/wireshark-1.png)
 2. Определите длину (в байтах) для каждого поля UDP-заголовка, обращаясь к отображаемой
    информации о содержимом полей в данном пакете.
-   - <!-- todo -->
+   - Кликаем на каждое из полей и видим в самом низу в строке состояния, что каждое поле занимает 2 байта.  
+   Итого: 8 байт  
+   ![](images/wireshark-2-1.png)
+   ![](images/wireshark-2-2.png)
+   ![](images/wireshark-2-3.png)
+   ![](images/wireshark-2-4.png)
 3. Значение в поле Length (Длина) – это длина чего?
-   - <!-- todo -->
+   - Буквально написано в строке состояния для поля Length :)  
+   Это размер заголовка (8 байт) + размер полезных данных (UDP payload = 38 байт).
 4. Какое максимальное количество байт может быть включено в полезную нагрузку UDP-пакета?
-   - <!-- todo -->
+   - Т.к. поле Length занимает 2 байта = 16 бит, то его максимальное значение равно 65535.  
+   Вычитаем размер заголовка и получаем, что максимальное количество байт, которое может быть включено в полезную нагрузку UDP-пакета, равно **65535 - 8 = 65527 байт**.
 5. Чему равно максимально возможное значение номера порта отправителя?
-   - <!-- todo -->
+   - Т.к. поле Source Port занимает 2 байта = 16 бит, то максимально возможное значение номера порта отправителя равно **65535**.
 6. Какой номер протокола для протокола UDP? Дайте ответ и для шестнадцатеричной и
    десятеричной системы. Чтобы ответить на этот вопрос, вам необходимо заглянуть в поле
    Протокол в IP-дейтаграмме, содержащей UDP-сегмент.
-   - <!-- todo -->
+   - В десятичной системе - **17**, в шестнадцатеричной - **11**.  
+   ![](images/wireshark-6.png)
 7. Проверьте UDP-пакет и ответный UDP-пакет, отправляемый вашим хостом. Определите
    отношение между номерами портов в двух пакетах.
-   - <!-- todo -->
+   - Номера портов меняются местами. Т.е. порт отправителя в запросе становится портом назначения в ответе, а порт назначения в запросе становится портом отправителя в ответе.  
+   ![](images/wireshark-7-1.png)
+   ![](images/wireshark-7-2.png)
 
 ## Программирование. FTP
 
@@ -39,7 +50,17 @@
 Приложите скриншоты.
 
 #### Скрины
-todo
+![](images/filezilla-1.png)
+![](images/filezilla-2.png)
+![](images/filezilla-3.png)
+![](images/filezilla-4.png)
+![](images/filezilla-5.png)
+![](images/filezilla-6.png)
+![](images/filezilla-7.png)
+![](images/filezilla-8.png)
+![](images/filezilla-9.png)
+![](images/filezilla-10.png)
+![](images/filezilla-11.png)
 
 ### FTP клиент (3 балла)
 Создайте консольное приложение FTP клиента для работы с файлами по FTP. Приложение может
@@ -54,7 +75,24 @@ todo
 Бонус: Не используйте готовые библиотеки для работы с FTP (например, ftplib для Python), а реализуйте решение на сокетах **(+3 балла)**.
 
 #### Демонстрация работы
-todo
+![](images/ftp-client-1.png)
+![](images/ftp-client-2.png)
+![](images/ftp-client-3.png)
+![](images/ftp-client-4.png)
+![](images/ftp-client-5.png)
+![](images/ftp-client-6.png)
+![](images/ftp-client-7.png)
+![](images/ftp-client-8.png)
+![](images/ftp-client-9.png)
+![](images/ftp-client-10.png)
+![](images/ftp-client-11.png)
+![](images/ftp-client-12.png)
+![](images/ftp-client-13.png)
+![](images/ftp-client-14.png)
+![](images/ftp-client-15.png)
+![](images/ftp-client-16.png)
+![](images/ftp-client-17.png)
+![](images/ftp-client-18.png)
 
 ### GUI FTP клиент (4 балла)
 Реализуйте приложение FTP клиента с графическим интерфейсом. НЕ используйте C#.
@@ -73,7 +111,27 @@ todo
 содержимое файла можно выводить в главном окне.
 
 #### Демонстрация работы
-todo
+![](images/ftp-client-gui-1.png)
+![](images/ftp-client-gui-2.png)
+![](images/ftp-client-gui-3.png)
+![](images/ftp-client-gui-4.png)
+![](images/ftp-client-gui-5.png)
+![](images/ftp-client-gui-6.png)
+![](images/ftp-client-gui-7.png)
+Retrieve тут сделался автоматически, но можно выделить файлик и кликнуть на одноимённую кнопку самому:  
+![](images/ftp-client-gui-8.png)
+![](images/ftp-client-gui-9.png)
+![](images/ftp-client-gui-10.png)
+![](images/ftp-client-gui-11.png)
+![](images/ftp-client-gui-12.png)
+![](images/ftp-client-gui-13.png)
+![](images/ftp-client-gui-14.png)
+![](images/ftp-client-gui-15.png)
+![](images/ftp-client-gui-16.png)
+Ну и давайте проверим корректность работы аутентификации с паролем:  
+![](images/ftp-client-gui-17.png)
+![](images/ftp-client-gui-18.png)
+![](images/ftp-client-gui-19.png)
 
 ### FTP сервер (5 баллов)
 Реализуйте свой FTP сервер, который работает поверх TCP сокетов. Вы можете использовать FTP клиента, реализованного на прошлом этапе, для тестирования своего сервера.
@@ -87,4 +145,17 @@ todo
 - QUIT
 
 #### Демонстрация работы
-todo
+> Ниже я тестирую сервер, используя консольную версию своего клиента.  
+Дело в том, что в изначальной версии моего клиента `ls` делался командой LIST, а в сервере просят поддержать NLST. Для этого мне пришлось немного переписать клиент, добавив возможность с помощью нового флага `--names-only` у консольной команды `ls` форсить использование NLST. А в GUI поддерживать NLST не было никакого смысла, ибо результат команды LIST там использовался чисто для парсинга содержимого текущей директории и вывода этого содержимого в интерфейс.. ну и как-то странно было бы менять логику чисто косметического парсинга специально лишь для этого задания :)
+
+![](images/ftp-server-1.png)
+![](images/ftp-server-2.png)
+![](images/ftp-server-3.png)
+![](images/ftp-server-4.png)
+![](images/ftp-server-5.png)
+![](images/ftp-server-6.png)
+![](images/ftp-server-7.png)
+![](images/ftp-server-8.png)
+![](images/ftp-server-9.png)
+![](images/ftp-server-10.png)
+![](images/ftp-server-11.png)
