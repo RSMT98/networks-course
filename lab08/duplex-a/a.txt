@@ -1,0 +1,3 @@
+In quantum field theory, a particle is not a "little ball", but an excitation of a field whose symmetries define conserved quantities through Noether’s theorem.
+Yet those symmetries can be spontaneously broken, leaving the laws unchanged while the vacuum is not.
+So "emptiness" in modern physics is not absence, but a structure that determines what can exist at all.

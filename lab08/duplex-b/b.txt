@@ -1,0 +1,3 @@
+Entropy is not simply "disorder", but a measure of how many microstates are indistinguishable at the macroscopic level.
+The arrow of time arises because almost any evolution from a rare state leads toward a more probable one.
+We call this "the flow of time", though it may simply be statistics experienced from the inside.
