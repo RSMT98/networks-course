@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {
+      "listen_port": 9000,
+      "target_ip": "127.0.0.1",
+      "target_port": 8082
+    }
+  ]
+}
